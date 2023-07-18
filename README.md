@@ -15,4 +15,6 @@ brew install ffmpeg
 Get client ID and secret from Spotify API and input to .env
 
 ## Usage
+```
 python3 main.py [-h] [-ls] [-d] --playlist [--path]
+```
