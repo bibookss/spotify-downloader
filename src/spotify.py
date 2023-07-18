@@ -36,3 +36,7 @@ def get_playlist_tracks(token, playlist_id):
         tracks.append(track['track']['name'])
 
     return tracks
+
+def display_playlist_tracks(tracks):
+    for index, track in enumerate(tracks):
+        print(f'{index+1}. {track}')
