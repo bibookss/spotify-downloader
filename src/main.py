@@ -29,6 +29,7 @@ def get_token(client_id, client_secret):
 
     return token
 
-
-token = get_token(client_id, client_secret)
-print(token)
+def get_auth_header(token):
+    return {
+        'Authorization': f'Bearer {token}'
+    }
