@@ -33,3 +33,20 @@ def get_auth_header(token):
     return {
         'Authorization': f'Bearer {token}'
     }
+
+def get_playlist_tracks(token, playlist_id):
+    url = f'https://api.spotify.com/v1/playlists/{playlist_id}/tracks'
+    headers = get_auth_header(token)
+    res = requests.get(url, headers=headers)
+    json_result = json.loads(res.content)
+    tracks_json = json_result['items']
+
+    tracks = []
+    for track in tracks_json:
+        tracks.append(track['track']['name'])
+
+    return tracks
+
+if __name__ == '__main__':
+    token = get_token(client_id, client_secret)
+    tracks = get_playlist_tracks(token, '48Zqp7HCEBIiEYj3HTC45U')
