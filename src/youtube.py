@@ -1,9 +1,9 @@
 import requests
-from utils.utils import html_page
+from youtubesearchpython import VideosSearch
 
-def yotube_search(title):
-    title = title.replace(' ', '+')
-    url = f'https://www.youtube.com/results?search_query={title}'
+def get_youtube_url(title):
+    search = VideosSearch(title, limit=1)
+    result = search.result()
+    url = result['result'][0]['link']
     
-    res = requests.get(url)
-    
+    return url
