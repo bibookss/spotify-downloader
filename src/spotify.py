@@ -1,7 +1,7 @@
 import base64
 import requests
 import json
-from utils import get_auth_header
+from utils.utils import get_auth_header
 
 def get_token(client_id, client_secret):
     auth_string = f'{client_id}:{client_secret}'    
