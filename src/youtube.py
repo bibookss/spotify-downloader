@@ -1,4 +1,3 @@
-import requests
 from youtubesearchpython import VideosSearch
 
 def get_youtube_url(title):
