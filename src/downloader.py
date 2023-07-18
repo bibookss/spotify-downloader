@@ -1,5 +1,4 @@
 import yt_dlp 
-import os
 
 def download(title, link, path):
     ydl_opts = {
